@@ -7,10 +7,10 @@ import time
 api = PushshiftAPI()
 
 def subreddit_year(subreddit, year):
-  path = "./data/"
+  path = "../data/"
   
   start = int(dt.datetime(year, 1, 1).timestamp())
-  end = int(dt.datetime(year+1, 1, 1).timestamp())
+  end = int(dt.datetime(year, 1, 1).timestamp())
 
   temp = list(api.search_submissions(after=start,
                                      before=end,
@@ -55,4 +55,4 @@ for year in range(2019, 2023):
 """
 
 for subreddit in subreddits:
-    subreddit_year(subreddit, 2021)
+    subreddit_year(subreddit, 2022)

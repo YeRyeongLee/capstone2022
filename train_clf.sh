@@ -1,0 +1,22 @@
+python classification/train.py \
+    --output_dir ./models/train_dataset \
+    --train_data './data/test_data.csv' \
+    --eval_data './data/test_data.csv' \
+    --model_name_or_path roberta-large \
+    --per_device_train_batch_size 8 \
+    --per_device_eval_batch_size 8 \
+    --gradient_accumulation_steps 1 \
+    --num_train_epochs 1 \
+    --weight_decay 0.01 \
+    --warmup_ratio 0.1 \
+    --learning_rate 1e-5 \
+    --eval_steps 1 \
+    --logging_steps 1 \
+    --save_steps 1 \
+    --load_best_model_at_end \
+    --evaluation_strategy steps \
+    --wandb_entity yiye \
+    --wandb_project test \
+    --wandb_name test \
+    --push_to_hub True \
+    --push_to_hub_model_id test
